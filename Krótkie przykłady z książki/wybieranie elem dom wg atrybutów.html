@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>1.3 Używanie selektorów, filtrów i stylów CSS</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            .google-icon{
+                background: url("obrazy/google-logo.jpg") no-repeat;
+                background-size: 20px;
+                padding: 0px 30px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header id="main">
+            <h1>Wybieranie elementów DOM według atrybutów</h1>
+        </header>
+
+        <main>
+
+            <section>
+                <header>
+                    <h2>Wybieranie odnośników zawierających adres konkretnej witryny internetowej</h3>
+                        <code class="cssCode">
+                            .google-icon{ <br />
+                                <spam class="nextLine">zzz</spam>background: url("obrazy/google-logo.jpg") no-repeat; <br />
+                            }
+                        </code>
+                        <code class="scriptCode">
+                            $('ul li a[href*="google.com"]').addClass('google-icon');
+                        </code>
+
+
+                </header>
+                <ul>
+                    <li>
+                        <a href="https://www.google.com/analytics/">Google Analytics</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk&list=RDMMQrOe2h9RtWI&index=15">Luis Fonsi - Despacito</a>
+                    </li>
+                </ul>
+                <hr />
+            </section>
+        </main>
+
+        <script>
+            $(document).ready(function() {
+                $('ul li a[href*="google.com"]').addClass('google-icon');
+            });
+        </script>
+    </body>
+</html>

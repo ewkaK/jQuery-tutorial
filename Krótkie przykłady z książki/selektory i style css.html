@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+    <head>
+        <title>1. Używanie selektorów, filtrów i stylów CSS</title>
+
+        <style>
+            img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <!-- Po kliknięciu w link wyskakuje nowe okno o ustalonej wielkości -->
+        <!-- <script type="text/javascript">
+            $(document).ready(function() {
+                $(".help-link").click(function() {
+                    var linkHref = $(this).attr('href');
+                    window.open(linkHref, 'help window', 'height=800, width=600, toolbar=no');
+                    return false;
+                })
+            });
+        </script> -->
+
+
+        <!-- Przykład z petlą z niepotrzebnymi zmiennymi + dodanie html do wskazanego diva -->
+        <!-- <script>
+            var numShows = 10;
+            var numTickets = 100;
+            $(document).ready(function() {
+                for(var i=0; i < numTickets; i++){
+                    var numTotal = i + 1;
+                    // $('.container').append("<p>To mój " + numTotal + "." + " koncert.</p>");
+                    $('.container').append("<p class='koncert'>To mój " + numTotal + "." + " koncert.</p>").css('border', '1px solid #333');
+                }
+                //
+                // //pokaż tylko ostatnie (numShows)
+                // var koncerty = $('p.koncert'); //tablica ze wszystkimi koncertami
+                //
+                // //ukrycie wszystkich poza ostatnimi
+                // for(i = 0; i<90; i++){
+                //     var elementp = koncerty[i];
+                //     //elementp.css('display', 'none');
+                // }
+            });
+        </script> -->
+
+        <!-- Dodanie do każdego elementu DOM bordera -->
+        <!-- <script>
+            $(document).ready(function(){
+                $('*').css('border', '1px solid #333');
+            })
+        </script> -->
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                $('h1').css('font-family', 'arial,verdana');
+            })
+        </script>
+
+        <!-- przykład zastosowania kilku linijek kodu css -->
+        <script>
+            $(document).ready(function() {
+                $('.telephone').css({
+                    'padding'  :    '5px',
+                    'border'   :    '1px solid #ccc',
+                    'width'    :    '150px',
+                    'float'    :    'left'
+                })
+            })
+        </script>
+
+        <!-- chwytanie elementów będącymi bezpośrednimi dziećmi elementu nadrzędnego -->
+        <script>
+            $(document).ready(function() {
+                $('.book.inactive > p').css('display', 'none');
+                $('.book.inactive').append('Przepraszamy, ale ta książka nie jest już dostępna w sprzedaży.').css('color', 'red');
+            })
+        </script>
+
+        <!-- chwytanie elementów potomnych  -->
+        <script>
+            $(document).ready(function() {
+                $('#sidebar ul li').css('border', '3px dashed blue');
+            })
+        </script>
+
+
+        <!-- chwytanie kilku elementów na raz -->
+        <script>
+            $(document).ready(function() {
+                $('.book-one, .book-two, .book-three, .book-four, .book-five, #spisKsiazek #header, #spisKsiazek #footer, #spisKsiazek p').css('background', '#ccc');
+            })
+        </script>
+
+
+    </head>
+    <body>
+        <a href="http://jquery.com/">jQuery</a>
+        <p class="text" title="foo is good for you">To jest przykładowytekst z klasą "text" i nadanym title</p>
+
+        <a href="help.html" class="help-link">Pomoc</a>
+
+        <div class="container">
+            <h1>Witaj, jQuery.</h1>
+        </div>
+
+        <div id="sidebar">
+            <ul class="sidebar-nav">
+                <li>Odnośnik 1</li>
+                <li>Odnośnik 2</li>
+                <li>
+                    <ul>
+                        <li>Odnośnik podrzędny 1</li>
+                        <li>Odnośnik podrzędny 2</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="budki-teleoniczne">
+            <h1>Mnóstwo budek telefonicznych!</h1>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+            <div class="telephone"><img src="obrazy/phone-boxes.jpg" /></div>
+        </div>
+        <div style="clear:both"></div>
+
+
+        <div class="book inactive">
+            <p>
+                Przewodnik po Krakowie
+            </p>
+        </div>
+
+        <div class="book active">
+            <p>
+                Przewodnik po Warszawie
+            </p>
+        </div>
+        <div class="book inactive">
+            <p>
+                Przewodnik po Gdańsku
+            </p>
+        </div>
+        <div class="book active">
+            <p>
+                Przewodnik po Wrocławiu
+            </p>
+        </div>
+        <div class="book inactive">
+            <p>
+                Przewodnik po Sopocie
+            </p>
+        </div>
+
+        <div id="spisKsiazek">
+            <div id="header">
+                <h1>Klub książki</h1>
+            </div>
+            <div class="book-one"><p>Przewodnik po Krakowie</p></div>
+            <div class="book-two"><p>Przewodnik po Warszawie</p></div>
+            <div class="book-three"><p>Przewodnik po Gdańsku</p></div>
+            <div class="four"><p>Przewodnik po Wrocławiu</p></div>
+            <div class="book-five"><p>Przewodnik po Sopocie</p></div>
+            <div id="footer"><p>Prawa autorskie 2010</p></div>
+        </div>
+
+    </body>
+</html>

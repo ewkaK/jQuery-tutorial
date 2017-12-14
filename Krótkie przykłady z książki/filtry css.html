@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+    <head>
+        <title>1.2 Używanie selektorów, filtrów i stylów CSS</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <!-- filtry :even i :odd -->
+        <script>
+            $(document).ready(function() {
+                $('table#evenIodd tr:even').css('background', '#dedede');
+                $('table#evenIodd tr:odd').css('background', '#fff');
+            })
+        </script>
+
+        <!-- filtry :first i :last -->
+        <script>
+            $(document).ready(function() {
+                $('ul#firstIlast li:first').css('border', 'none');
+                $('ul#firstIlast li:last').css('border', 'none');
+            })
+        </script>
+
+        <!-- filtr :has -->
+        <script>
+            $(document).ready(function() {
+                $('#contentHas:has(p)').css('font-size', '18px');
+            })
+        </script>
+
+        <!-- filtr :empty -->
+        <script>
+            $(document).ready(function(){
+                $('.errorEmpty:empty').css('display', 'none');
+            })
+        </script>
+
+        <!-- filtr :contains -->
+        <script>
+            $(document).ready(function() {
+                $("table#contains tr td:contains('Ręczniki papierowe')").css('border', '1px dashed #333');
+            })
+        </script>
+
+
+    </head>
+    <body>
+        <header id="main">
+            <h1>Używanie filtrów CSS w jQuery</h1>
+        </header>
+        <main>
+            <section>
+                <header>
+                    <h2>Filtry Even & Odd</h3>
+                        <code class="scriptCode">
+                            $('table#evenIodd tr:even').css('background', '#dedede');<br />
+                            $('table#evenIodd tr:odd').css('background', '#fff');
+                        </code>
+                </header>
+                <table id="evenIodd">
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Opis</th>
+                        <th>Cena</th>
+                    </tr>
+                    <tr>
+                        <td>Ręczniki papierowe</td>
+                        <td>najlepiej wchłaniające ręczniki papierowe.</td>
+                        <td>18,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Serwetki papierowe</td>
+                        <td>Doskonałe na spotkaniach rodzinnych w plenerze.</td>
+                        <td>16,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Tacki papierowe</td>
+                        <td>Znakomita cena.</td>
+                        <td>5,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Platikowe widelce</td>
+                        <td>Niezbędne akcesorium na piknik</td>
+                        <td>2,99 zł</td>
+                    </tr>
+                </table>
+            </section>
+
+            <hr />
+
+            <section>
+                <header>
+                    <h2>Filtry First & Last</h3>
+                        <code class="cssCode">
+                            ul li{ <br />
+                                <spam class="nextLine">zzz</spam>border-bottom: 1px solid #333;<br />
+                            } <br />
+                        </code>
+                        <code clss="scriptCode">
+                            $('ul li:first').css('border', 'none');<br />
+                            $('ul li:last').css('border', 'none');</code>
+                </header>
+                <h4>Nawigacja</h4>
+                <ul id="firstIlast">
+                    <li><a href="#">Strona Główna</a></li>
+                    <li><a href="#">O nas</a>
+                    <li><a href="#">Uslugi</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Kupony</a></li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <section>
+                <header>
+                    <h2>Filtr Has</h3>
+                        <code clss="scriptCode">
+                            $('#content:has(p)').css('font-size', '18px');
+                        </code>
+                </header>
+                <div id="contentHas">
+                    <p>To jest moja treść.</p>
+                </div>
+                <div id="alternateHas">
+                    <p>To jest inna treść.</p>
+                </div>
+            </section>
+
+            <hr />
+
+            <section>
+
+                <header>
+                    <h2>Filtr Empty</h3>
+                        <code clss="scriptCode">
+                            $('.error:empty').css('display', 'none');
+                        </code>
+                </header>
+                <div class="errorEmpty info-exclamation"></div>
+                <div class="errorEmpty info-exclamation">To jest mój komunikat o błędzie.</div>
+                <img src="obrazy/filtr_empty.jpg" alt="filt :empty rezultat w przeglądarce - kod html" />
+            </section>
+
+            <hr />
+
+            <section>
+                <header>
+                    <h2>Filtr Contains</h3>
+                        <code clss="scriptCode">
+                            $("tr td:contains('Ręczniki papierowe')").css('border', '1px dashed #333');
+                        </code>
+                </header>
+                <table id="contains">
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Opis</th>
+                        <th>Cena</th>
+                    </tr>
+                    <tr>
+                        <td>Ręczniki papierowe</td>
+                        <td>najlepiej wchłaniające ręczniki papierowe.</td>
+                        <td>18,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Serwetki papierowe</td>
+                        <td>Doskonałe na spotkaniach rodzinnych w plenerze.</td>
+                        <td>16,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Tacki papierowe</td>
+                        <td>Znakomita cena.</td>
+                        <td>5,99 zł</td>
+                    </tr>
+                    <tr>
+                        <td>Platikowe widelce</td>
+                        <td>Niezbędne akcesorium na piknik</td>
+                        <td>2,99 zł</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
