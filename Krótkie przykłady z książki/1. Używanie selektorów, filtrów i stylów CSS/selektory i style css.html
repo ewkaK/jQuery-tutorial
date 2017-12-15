@@ -176,5 +176,25 @@
             <div id="footer"><p>Prawa autorskie 2010</p></div>
         </div>
 
+        <hr />
+        <div class="test" style="border:1px solid #ccc; padding: 5px;">
+            <p>
+                Ciekawe czy to sie usunie
+            </p>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $('.test p').text('Teks dodany przez .txt, działa taka samo jak przez .html - nadpisuje zawartość elementu')
+                $('.test').append('<p>Druga linijka dodana przez append</p>')
+                $('.test').prepend('<p>Trzecia linijka dodana przez prepend</p>')
+
+                $('.test').after('<p>To jest teks dodany przez after</p>');
+                $('.test').before('<p>To jest teks dodany przez before</p>');
+
+                // $('#budki-teleoniczne').clone().append('.test'); ---> nie działa xD
+                $('#budki-teleoniczne').clone().insertAfter('.test');
+            })
+        </script>
     </body>
 </html>
