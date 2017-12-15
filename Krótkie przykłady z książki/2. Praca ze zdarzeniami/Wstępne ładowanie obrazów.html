@@ -10,26 +10,28 @@
                 width:100%; height:auto;
             }
         </style>
-    </head>
-    <body>
-        <div class="gallery">
-        </div>
-
         <script>
             var imgArray = [
                 "gallery1.jpg",
-                "gallery2.jpg",
-                "gallery3.jpg",
+                "gallery2.jpeg",
+                "gallery3.jpeg",
                 "gallery4.jpg",
                 "gallery5.jpg",
             ]
             var imgArrLength = imgArray.length;
             var i = 0;
+
             for (i=0; i<= imgArrLength; i++) {
-                $('img').attr('src' : 'obrazy/' + imgArray[i]).load(function(){
-                    $('.gallery').append(this);
+                $('<img />').attr('src', 'obrazy/'+imgArray[i]).on('load',function(){
+                    $('.gallery').append($(this));
                 });
             }
         </script>
+    </head>
+    <body>
+        <div class="gallery">
+        </div>
+
+
     </body>
 </html>
