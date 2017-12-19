@@ -13,9 +13,8 @@ $(window).unload(function() {
 });
 
 
-*ta teoretycznie powinna działać w nowszych, ale niestety
-$(window).on("unload", function()
-{
+*ta teoretycznie powinna działać w nowszych, ale niestety, dziwne...
+$(window).on("unload", function() {
 	alert("Nie odchodź :c");
 });
 */
