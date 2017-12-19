@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Wstępne ładowanie obrazów przy zdarzeniu load()</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <style>
             img {
                 width:100%; height:auto;
@@ -26,11 +27,23 @@
                     $('.gallery').append($(this));
                 });
             }
+
+            $(document).ready(function() {
+                $('.mylink.bind').bind(click, alertMe);
+                function alertMe() {
+                    alert("To nie jest wcale ciekawe")
+                }
+            })
+
         </script>
+        <!-- <script src="wyswietlanie-alertu-w-momencie-opuszczenia-strony"></script>
+        <script src="dowiązanie-programu-obsługi-zdarzenia.js"></script> -->
     </head>
     <body>
         <div class="gallery">
         </div>
+
+        <div class="mylink bind" style="padding:20px; border:1px solid #000">Kliknij aby przetestować dowiązania</div>
 
 
     </body>
