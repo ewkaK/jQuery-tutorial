@@ -12,38 +12,29 @@
             }
         </style>
         <script>
-            var imgArray = [
-                "gallery1.jpg",
-                "gallery2.jpeg",
-                "gallery3.jpeg",
-                "gallery4.jpg",
-                "gallery5.jpg",
-            ]
-            var imgArrLength = imgArray.length;
-            var i = 0;
-
-            for (i=0; i<= imgArrLength; i++) {
-                $('<img />').attr('src', 'obrazy/'+imgArray[i]).on('load',function(){
-                    $('.gallery').append($(this));
-                });
-            }
-
-            $(document).ready(function() {
-                $('.mylink.bind').bind(click, alertMe);
-                function alertMe() {
-                    alert("To nie jest wcale ciekawe")
-                }
-            })
-
-        </script>
-        <!-- <script src="wyswietlanie-alertu-w-momencie-opuszczenia-strony"></script>
-        <script src="dowiązanie-programu-obsługi-zdarzenia.js"></script> -->
+               var imgArray = [
+                   "gallery1.jpg",
+                   "gallery2.jpeg",
+                   "gallery3.jpeg",
+                   "gallery4.jpg",
+                   "gallery5.jpg",
+               ]
+               var imgArrLength = imgArray.length;
+               var i = 0;
+               for (i=0; i<= imgArrLength; i++) {
+                   $('<img />').attr('src', 'obrazy/'+imgArray[i]).on('load',function(){
+                       $('.gallery').append($(this));
+                   });
+               }
+           </script>
+        <script src="wyswietlanie-alertu-w-momencie-opuszczenia-strony"></script>
+        <script src="dowiązanie-programu-obsługi-zdarzenia.js"></script>
     </head>
     <body>
         <div class="gallery">
         </div>
 
-        <div class="mylink bind" style="padding:20px; border:1px solid #000">Kliknij aby przetestować dowiązania</div>
+        <div class="mylink" style="padding:20px; border:1px solid #000">Kliknij aby przetestować dowiązania</div>
 
 
     </body>
