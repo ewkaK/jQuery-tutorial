@@ -4,11 +4,21 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Wstępne ładowanie obrazów przy zdarzeniu load()</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <style>
             img {
                 width:100%; height:auto;
+            }
+            .container{
+                width: 50px; height:50px; background: #ccc; margin: 10px; display: block; float: left;
+            }
+            .block{
+                width: 20px; height:20px; background: #000; margin: 15px;
+            }
+            .content{
+                display: none;
             }
         </style>
         <script>
@@ -29,6 +39,7 @@
            </script>
         <script src="wyswietlanie-alertu-w-momencie-opuszczenia-strony.js"></script>
         <script src="dowiązanie-programu-obsługi-zdarzenia.js"></script>
+        <script src="zdarzenia-myszy.js"></script>
     </head>
     <body>
         <div class="gallery">
@@ -39,13 +50,28 @@
         <div class="conteinerwithbox">
             <div class="box" style="display: block; margin: 10px; width: 50px; height: 50px; border: 1px solid #3b96de; border-radius: 26px; background: #59a4e0; float: left;"></div>
         </div>
-        <div style="clear:both"></div>
 
-        <div class="container" style="width: 50px; height:50px; background: #ccc; margin: 10px; display: block; float: left">
-            <div class="block" style="width: 20px; height:20px; background: #000; margin: 15px;"></div>
+        <hr />
+
+        <div class="container">
+            <div class="block"></div>
         </div>
-        <div class="container" style="width: 50px; height:50px; background: #ccc; margin: 10px; display: block; float: left">
-            <div class="block" style="width: 20px; height:20px; background: #000"></div>
+        <div class="container">
+            <div class="block"></div>
         </div>
+
+        <hr  />
+
+        <h3>Pan Tadeusz</h3>
+        <p>
+            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie. Nazywał się sploty. Kolor musiał wszystkie charty w całej psiarni dwa tysiące kroków zamek dziś z miasta, ze śmiechu a on zająca pochwycił. Asesor Krajczance a starzy i stanęły: tak nas powrócisz cudem na niem noty i gałęzie drzewa cały las wiąże w Litwie Woźny ciągle Sędziemu tłumaczył dlaczego urządzenie pańskie przeinaczył we brzozowym gaju stał przed nauczycielem.
+        </p>
+        <a href="#" class="content-link">Pokaż więcej...</a>
+        <div class="content">
+            <p>
+                Szczęściem, że miał za nim widzi sprzęty, też znacznie chartom pomaga do łona a wszystko się na jutro sam przyjmować i bezładnie. nieporządek miły! Litwo! Ojczyzno moja! Ty jesteś jak zdrowie. Nazywał się sploty. Kolor musiał wszystkie charty w całej psiarni dwa tysiące kroków zamek dziś z miasta, ze śmiechu a on zająca pochwycił. Asesor Krajczance a starzy i stanęły: tak nas powrócisz cudem na niem noty i gałęzie drzewa cały las wiąże w Litwie Woźny ciągle Sędziemu tłumaczył dlaczego urządzenie pańskie przeinaczył we brzozowym gaju stał przed nauczycielem. Niestare były zajęte stołu przywoławszy dwie strony: Uciszcie się! woła. Marząc i przepraszał Sędziego. Sędzia szedł z wieczór gospodarz widzi.
+            </p>
+        </div>
+
     </body>
 </html>

@@ -15,15 +15,19 @@ $(document).ready(function(){
     });
 });
 
-
+//W tym przykładzie miałą zostać użyta metoda .bind(), została usunięta w nowszym jQ, zastąpiona .on()
+//Metoda bind współpracuje tylko z elementami, które znajdują się w drzewie DOM w chwili dowiązania tego zdarzenia
 $(document).ready(function() {
     $('.box').on('click', function() {
         $(this).clone().appendTo('.conteinerwithbox');
-    })
-})
+    });
+});
 
+//W tym przykładzie miała zostac użyta metoda .live(), została usunięta w nowszym jQ, zastąpiona .on()
+//Metoda live współpracuje z bierzącymi i przyszłymi elementami drzewa DOM
+//wadą tej metody jest brak możliwości łączenia innych metod w łańcuch, czyli poniższy kod z tą metodą by nie zadziałał.
 $(document).ready(function(){
     $('.container').first().on('click', function(){
         $(this).clone().addClass('square').appendTo('.container:first');
-    })
-})
+    });
+});
