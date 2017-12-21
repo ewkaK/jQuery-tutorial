@@ -18,6 +18,12 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     $('.box').on('click', function() {
-        $(this).clone().appendTo('.conteiner');
+        $(this).clone().appendTo('.conteinerwithbox');
+    })
+})
+
+$(document).ready(function(){
+    $('.container').first().on('click', function(){
+        $(this).clone().addClass('square').appendTo('.container:first');
     })
 })
